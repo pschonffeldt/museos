@@ -3,6 +3,8 @@
 import ListResults from "./ListResults";
 import Alert from "./Alert";
 import Button from "./Button";
+import SideBar from "./SideBar";
+import "../index.css";
 
 // Constants
 
@@ -26,14 +28,20 @@ const handleSelectItem = (item: string) => {
 
 function App() {
   return (
-    <div>
-      <Alert text="Este es un error" />
-      <Button text={buttonText} />
-      <ListResults
-        items={items}
-        heading="Listado de Museos"
-        onSelectItem={handleSelectItem}
-      />
+    <div className="layout">
+      <aside className="sidebar">
+        <SideBar>
+          <ListResults
+            items={items}
+            heading="Listado de Museos"
+            onSelectItem={handleSelectItem}
+          />
+        </SideBar>
+      </aside>
+      <main className="main">
+        <Alert text="Este es un error" />
+        <Button text={buttonText} />
+      </main>
     </div>
   );
 }
