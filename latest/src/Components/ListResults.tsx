@@ -13,15 +13,15 @@ function ListResults({ items, heading, onSelectItem }: ListResultsProps) {
 
   return (
     <>
-      <h1>{heading}</h1>
+      <h1 className="title">{heading}</h1>
       {items.length === 0 && <p>No se encontró la lista</p>}
       <ul className="list-group">
         {items.map((item, index) => (
           <li
             className={
               selectedIndex === index
-                ? "list-group-item active"
-                : "list-group-item"
+                ? "list-group-item list-text list-group-active-color"
+                : "list-group-item list-text"
             }
             key={item}
             onClick={() => {
