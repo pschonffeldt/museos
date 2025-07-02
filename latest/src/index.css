@@ -1,17 +1,38 @@
 /* layout.css */
+
+html,
+body,
+.layout {
+  margin: 0;
+
+  display: flex;
+  width: 100%;
+}
+
 .layout {
   background-color: rgb(255, 255, 255);
   display: flex;
-  flex-direction: row;
   height: auto;
+  flex-direction: row;
+
+  width: 100vw;
+  /* height: 100vh;  */
+  border: 1px dotted;
 }
 
 .sidebar {
-  width: 25%;
+  /* width: 25%;
   min-width: 200px;
   height: auto;
   background-color: #283042;
+  padding: 1rem; */
+
+  width: 25%; /* or whatever width you prefer */
+  background-color: #1c2b3a;
+  overflow-y: auto; /* Makes only the sidebar scroll */
+  height: 100vh; /* Full screen height */
   padding: 1rem;
+  box-sizing: border-box;
 }
 
 .title {
@@ -42,9 +63,52 @@
 }
 
 .results-container {
-  background-color: #f5f8fb;
-  display: flex;
+  border: 1px dotted;
+  padding: 0;
+
   width: 75%;
-  flex-direction: column;
-  height: auto;
+  padding: 1rem;
+  background-color: #f8f9fc;
+  height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.results-content {
+  background-color: rgb(234, 234, 234);
+  height: 100%;
+}
+
+.header {
+  background-color: #ffffff;
+  min-height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  justify-content: space-between;
+  border: 1px dotted;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 1px dotted;
+  width: 500px;
+  background-color: #f0f3f7;
+}
+
+.donation-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 1px dotted;
 }

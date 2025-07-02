@@ -1,3 +1,3 @@
 export default function ResultsContent() {
-  return <div>ResultsContent</div>;
+  return <div className="results-content">ResultsContent</div>;
 }

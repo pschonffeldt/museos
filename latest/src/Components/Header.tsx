@@ -1,25 +1,25 @@
-import {
-  FaceIcon,
-  HamburgerMenuIcon,
-  MagnifyingGlassIcon,
-} from "@radix-ui/react-icons";
+import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
+import Button from "./Button";
 
 const Header = () => {
   return (
-    <nav>
-      <a href="http://www.pschonffeldt.dev"></a>
-      <form>
-        <div>
-          <HamburgerMenuIcon />
+    <nav className="header">
+      <div className="search-container">
+        <form>
           <input
-            type="text"
+            className="search-input"
+            // type="text"
             placeholder="Busca museos por su nombre…"
             aria-label="Search"
           ></input>
-          <MagnifyingGlassIcon />
-          <button>Buscar</button>
-        </div>
-      </form>
+          {/* <Button text={"Buscar"} /> */}
+        </form>
+      </div>
+      <div className="donation-container">
+        <Button text={"Donar"} />
+        <Button text={"Compartir"} />
+        <Button text={"Estadísticas"} />
+      </div>
     </nav>
   );
 };

@@ -43,8 +43,8 @@ function App() {
 
       <ResultsContainer>
         <Header />
-        {/* <Button text={buttonText} />
-        <Alert text="Este es un error" /> */}
+        {/* <Button text={buttonText} /> */}
+        {/* <Alert text="Este es un error" /> */}
         <ResultsContent />
       </ResultsContainer>
     </div>
