@@ -1,39 +1,21 @@
-import { useState } from "react";
+import React from "react";
 
 type ButtonProps = {
   text: string;
-  onClick?: () => void; // optional custom click handler
-  initialColor?: string; // optional initial color
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  buttonColors?: string; // optional, defaults to "primary"
 };
 
-const colorList = [
-  "primary",
-  "secondary",
-  "success",
-  "danger",
-  "warning",
-  "info",
-  "light",
-  "dark",
-];
-
-const Button = ({ text, onClick, initialColor = "primary" }: ButtonProps) => {
-  // Find the index of the initialColor or default to 0
-  const initialIndex = colorList.indexOf(initialColor);
-  const [colorIndex, setColorIndex] = useState(
-    initialIndex !== -1 ? initialIndex : 0
-  );
-
-  const handleClick = () => {
-    console.log("clicked");
-    if (onClick) onClick(); // Call parent's handler if provided
-    setColorIndex((prevIndex) => (prevIndex + 1) % colorList.length);
+const Button = ({ text, onClick, buttonColors = "primary" }: ButtonProps) => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    console.log(`Button "${text}" clicked`);
+    if (onClick) onClick(e);
   };
 
   return (
     <button
       type="button"
-      className={`btn btn-${colorList[colorIndex]}`}
+      className={`btn btn-${buttonColors}`}
       onClick={handleClick}
     >
       {text}
