@@ -3,36 +3,30 @@
 html,
 body,
 .layout {
-  margin: 0;
-
+  /* margin: 0; */
+  box-sizing: border-box;
   display: flex;
-  width: 100%;
+  height: 100vh; /* full height */
+  width: 100vw; /* full width */
 }
 
 .layout {
   background-color: rgb(255, 255, 255);
-  display: flex;
-  height: auto;
-  flex-direction: row;
-
-  width: 100vw;
-  /* height: 100vh;  */
   border: 1px dotted;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  overflow: hidden;
+  width: 100vw;
 }
 
 .sidebar {
-  /* width: 25%;
-  min-width: 200px;
-  height: auto;
-  background-color: #283042;
-  padding: 1rem; */
-
-  width: 25%; /* or whatever width you prefer */
   background-color: #1c2b3a;
-  overflow-y: auto; /* Makes only the sidebar scroll */
-  height: 100vh; /* Full screen height */
-  padding: 1rem;
   box-sizing: border-box;
+  height: 100vh; /* Full screen height */
+  overflow-y: auto; /* Makes only the sidebar scroll */
+  padding: 1rem;
+  width: 25%; /* or whatever width you prefer */
 }
 
 .title {
@@ -50,7 +44,6 @@ body,
 
 .list-text:hover {
   color: #ffffff;
-  /* background-color: red; */
   cursor: pointer;
 }
 
@@ -63,15 +56,13 @@ body,
 }
 
 .results-container {
-  border: 1px dotted;
-  padding: 0;
-
-  width: 75%;
-  padding: 1rem;
   background-color: #f8f9fc;
+  display: flex;
+  flex: 1; /* takes remaining space */
+  flex-direction: column; /* Stack header and content vertically */
   height: 100vh;
-  overflow: hidden;
-  box-sizing: border-box;
+  overflow-y: auto; /* scroll only here */
+  width: 100vw;
 }
 
 .results-content {
@@ -80,35 +71,35 @@ body,
 }
 
 .header {
+  align-items: center;
   background-color: #ffffff;
-  min-height: 50px;
+  border: 1px dotted;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  justify-content: space-between;
+  min-height: 50px;
   padding-left: 20px;
   padding-right: 20px;
-  justify-content: space-between;
-  border: 1px dotted;
 }
 
 .search-container {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  gap: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-  border: 1px dotted;
-  width: 500px;
   background-color: #f0f3f7;
+  border: 1px dotted;
+  padding-right: 20px;
+  padding-left: 20px;
+  flex-direction: row;
+  gap: 10px;
+  width: 500px;
 }
 
 .donation-container {
+  align-items: center;
+  border: 1px dotted;
   display: flex;
   flex-direction: row;
-  align-items: center;
   gap: 10px;
   padding-left: 20px;
   padding-right: 20px;
-  border: 1px dotted;
 }
