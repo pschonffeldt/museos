@@ -12,11 +12,11 @@ const Header = () => {
             placeholder="Busca museos por su nombre…"
             aria-label="Search"
           ></input>
+          <Button text={"Buscar"} />
           {/* <Button text={"Buscar"} /> */}
         </form>
       </div>
       <div className="donation-container">
-        <Button text={"Donar"} />
         <Button text={"Compartir"} />
         <Button text={"Estadísticas"} />
       </div>

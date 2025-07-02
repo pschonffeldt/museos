@@ -5,5 +5,5 @@ type ResultsContainerProps = {
 };
 
 export default function ResultsContainer({ children }: ResultsContainerProps) {
-  return <div className="results-container">{children}</div>;
+  return <main className="results-container">{children}</main>;
 }

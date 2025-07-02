@@ -1,14 +1,19 @@
 // Imports
 
 import ListResults from "./ListResults";
-// import Alert from "./Alert";
-// import Button from "./Button";
+
 import SideBar from "./SideBar";
 import "../index.css";
 import ResultsContainer from "./ResultsContainer";
 import { MuseumList } from "./lib/constants";
 import ResultsContent from "./ResultsContent";
 import Header from "./Header";
+import ResultsTopBar from "./ResultsTopBar";
+import ResultsMap from "./ResultsMap";
+import ResultsVisitorDetails from "./ResultsVisitorDetails";
+import ResultsType from "./ResultsType";
+import ResultsHistory from "./ResultsHistory";
+import ResultsDetailsContainer from "./ResultsDetailsContainer";
 
 // Constants
 
@@ -22,7 +27,7 @@ import Header from "./Header";
 
 //Functions
 
-// const buttonText = "Cambiar el color del boton";
+// const buttonText = "Boton";
 
 const handleSelectItem = (item: string) => {
   console.log(item);
@@ -43,12 +48,26 @@ function App() {
 
       <ResultsContainer>
         <Header />
-        {/* <Button text={buttonText} /> */}
-        {/* <Alert text="Este es un error" /> */}
-        <ResultsContent />
+        <ResultsTopBar />
+
+        <ResultsContent>
+          <ResultsDetailsContainer>
+            <ResultsType />
+            <ResultsHistory />
+            <ResultsVisitorDetails />
+          </ResultsDetailsContainer>
+          <ResultsMap />
+        </ResultsContent>
       </ResultsContainer>
     </div>
   );
 }
 
 export default App;
+
+{
+  /* <Button text={buttonText} /> */
+}
+{
+  /* <Alert text="Este es un error" /> */
+}
