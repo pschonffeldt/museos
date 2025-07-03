@@ -22,7 +22,6 @@ body,
 
 .sidebar {
   background-color: #1c2b3a;
-  /* box-sizing: border-box; */
   height: 100vh; /* Full screen height */
   overflow-y: auto; /* Makes only the sidebar scroll */
   padding: 1rem;
@@ -52,7 +51,7 @@ body,
 }
 
 .list-group-active-color {
-  background-color: #1d2331;
+  background-color: #6e7fa4;
 }
 
 .results-container {
@@ -82,6 +81,7 @@ body,
   min-height: 50px;
   padding-left: 20px;
   padding-right: 20px;
+  border-bottom: 1px solid;
 }
 
 .search-container {
@@ -149,14 +149,14 @@ body,
 }
 
 .results-details-container {
-  border-radius: 15px;
-  background-color: #f0f3f7;
+  background-color: #ffffff;
   height: 100%;
-  width: 60%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   gap: 5px;
+  padding: 10px;
   border: 1px dotted;
 }
 
@@ -176,9 +176,5 @@ body,
   border: 1px dotted;
 }
 .results-type {
-  border-radius: 15px;
-  background-color: rgb(132, 117, 117);
-  height: 300px;
-  width: 300px;
   border: 1px dotted;
 }

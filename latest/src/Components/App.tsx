@@ -9,10 +9,7 @@ import { MuseumList } from "./lib/constants";
 import ResultsContent from "./ResultsContent";
 import Header from "./Header";
 import ResultsTopBar from "./ResultsTopBar";
-import ResultsMap from "./ResultsMap";
-import ResultsVisitorDetails from "./ResultsVisitorDetails";
 import ResultsType from "./ResultsType";
-import ResultsHistory from "./ResultsHistory";
 import ResultsDetailsContainer from "./ResultsDetailsContainer";
 
 // Constants
@@ -30,7 +27,7 @@ import ResultsDetailsContainer from "./ResultsDetailsContainer";
 // const buttonText = "Boton";
 
 const handleSelectItem = (item: string) => {
-  console.log(item);
+  console.log(item, "tula");
 };
 
 // App
@@ -48,15 +45,12 @@ function App() {
 
       <ResultsContainer>
         <Header />
-        <ResultsTopBar />
+        <ResultsTopBar children={undefined} />
 
         <ResultsContent>
           <ResultsDetailsContainer>
             <ResultsType />
-            <ResultsHistory />
-            <ResultsVisitorDetails />
           </ResultsDetailsContainer>
-          <ResultsMap />
         </ResultsContent>
       </ResultsContainer>
     </div>

@@ -1,8 +1,8 @@
-const ResultsTopBar = ({ children }: ResultsContainerProps) => {
+const ResultsTopBar = ({ children }) => {
   return (
     <div className="results-top-bar">
       <div className="results-top-hader-container">
-        <h3 className="results-top-header">Nombre del museo DINAMICO</h3>
+        <h3 className="results-top-header">Nombre del museo {children}</h3>
       </div>
 
       <div className="results-top-bar-button-container">
@@ -15,7 +15,3 @@ const ResultsTopBar = ({ children }: ResultsContainerProps) => {
 };
 
 export default ResultsTopBar;
-
-{
-  /* <div className="dropdown me-2 d-inline-block position-relative">@</div> */
-}

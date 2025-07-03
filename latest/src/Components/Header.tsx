@@ -1,4 +1,3 @@
-import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import Button from "./Button";
 
 const Header = () => {

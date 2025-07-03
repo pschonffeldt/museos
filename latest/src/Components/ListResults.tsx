@@ -14,7 +14,6 @@ function ListResults({ items, heading, onSelectItem }: ListResultsProps) {
   return (
     <>
       <h1 className="title">{heading}</h1>
-      {items.length === 0 && <p>No se encontró la lista</p>}
       <ul className="list-group">
         {items.map((item, index) => (
           <li

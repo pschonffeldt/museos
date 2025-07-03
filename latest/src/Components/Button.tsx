@@ -9,7 +9,7 @@ type ButtonProps = {
 const Button = ({ text, onClick, buttonColors = "primary" }: ButtonProps) => {
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     console.log(`Button "${text}" clicked`);
-    if (onClick) onClick(e);
+    // if (onClick) onClick(e);
   };
 
   return (
