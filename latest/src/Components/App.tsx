@@ -1,67 +1,62 @@
-// Imports
-
-import ListResults from "./ListResults";
-
+// src/Components/App.tsx
+import { useState } from "react";
 import SideBar from "./SideBar";
-import "../index.css";
-import ResultsContainer from "./ResultsContainer";
-import { MuseumList } from "./lib/constants";
-import ResultsContent from "./ResultsContent";
+import ListResults from "./ListResults";
 import Header from "./Header";
-import ResultsTopBar from "./ResultsTopBar";
-import ResultsType from "./ResultsType";
-import ResultsDetailsContainer from "./ResultsDetailsContainer";
+import MuseumInfo from "./MuseumInfo";
+import Button from "./Button";
+import { fetchMuseosByName } from "./lib/hooks";
+import { MuseumList, type Museo } from "./lib/constants";
 
-// Constants
+export default function App() {
+  const [query, setQuery] = useState(""); // controlled input
+  const [museo, setMuseo] = useState<Museo | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
-// const items = [
-//   "Museo Nacional Aeronáutico y del Espacio",
-//   "Museo Ferroviario de Santiago",
-//   "Museo Histórico Nacional",
-//   "Museo de la Memoria y los Derechos Humanos",
-//   "Museo de Bomberos de Santiago",
-// ];
+  const handleSearch = async (e: React.FormEvent) => {
+    e.preventDefault(); // stop page reload
+    setError(null);
+    try {
+      const results = await fetchMuseosByName(query);
+      if (results.length === 0) {
+        setMuseo(null);
+        setError(`No se encontró museo llamado “${query}”`);
+      } else {
+        setMuseo(results[0]); // take the first match
+      }
+    } catch (err: any) {
+      setError(err.message);
+    }
+  };
 
-//Functions
-
-// const buttonText = "Boton";
-
-const handleSelectItem = (item: string) => {
-  console.log(item, "tula");
-};
-
-// App
-
-function App() {
   return (
     <div className="layout">
       <SideBar>
         <ListResults
           items={MuseumList}
           heading="Listado de Museos"
-          onSelectItem={handleSelectItem}
+          onSelectItem={(item) => setQuery(item)} // clicking a list item populates input
         />
       </SideBar>
 
-      <ResultsContainer>
-        <Header />
-        <ResultsTopBar children={undefined} />
+      <main className="main-content">
+        <Header>
+          {/* move the search form into your Header, pass props */}
+          <form onSubmit={handleSearch}>
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Busca museos por su nombre…"
+            />
+            <Button text="Buscar" />
+          </form>
+        </Header>
 
-        <ResultsContent>
-          <ResultsDetailsContainer>
-            <ResultsType />
-          </ResultsDetailsContainer>
-        </ResultsContent>
-      </ResultsContainer>
+        {error && <p style={{ color: "crimson" }}>{error}</p>}
+
+        {museo && <MuseumInfo museo={museo} />}
+      </main>
     </div>
   );
-}
-
-export default App;
-
-{
-  /* <Button text={buttonText} /> */
-}
-{
-  /* <Alert text="Este es un error" /> */
 }

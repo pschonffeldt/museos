@@ -1,26 +1,8 @@
-import Button from "./Button";
+// src/Components/Header.tsx
+import type { ReactNode } from "react";
 
-const Header = () => {
-  return (
-    <nav className="header">
-      <div className="search-container">
-        <form>
-          <input
-            className="search-input"
-            // type="text"
-            placeholder="Busca museos por su nombre…"
-            aria-label="Search"
-          ></input>
-          <Button text={"Buscar"} />
-          {/* <Button text={"Buscar"} /> */}
-        </form>
-      </div>
-      <div className="donation-container">
-        <Button text={"Compartir"} />
-        <Button text={"Estadísticas"} />
-      </div>
-    </nav>
-  );
-};
+type HeaderProps = { children: ReactNode };
 
-export default Header;
+export default function Header({ children }: HeaderProps) {
+  return <header className="header">{children}</header>;
+}

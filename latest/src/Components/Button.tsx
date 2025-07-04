@@ -1,22 +1,16 @@
-import React from "react";
-
 type ButtonProps = {
   text: string;
-  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
-  buttonColors?: string; // optional, defaults to "primary"
+  onClick?: () => void;
 };
 
-const Button = ({ text, onClick, buttonColors = "primary" }: ButtonProps) => {
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    console.log(`Button "${text}" clicked`);
-    // if (onClick) onClick(e);
-  };
-
+const Button = ({ text, onClick }: ButtonProps) => {
   return (
     <button
       type="button"
-      className={`btn btn-${buttonColors}`}
-      onClick={handleClick}
+      onClick={() => {
+        console.log(`${text} button clicked`); // ✅ confirm click
+        if (onClick) onClick();
+      }}
     >
       {text}
     </button>

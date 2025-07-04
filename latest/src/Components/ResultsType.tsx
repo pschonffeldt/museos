@@ -1,4 +1,3 @@
-import { BookmarkIcon } from "@radix-ui/react-icons";
 import type { ReactNode } from "react";
 
 type MapContainerProps = {
@@ -10,39 +9,15 @@ const ResultsType = ({ children }: MapContainerProps) => {
     <div className="results-type">
       <section className="job-details">
         <div>
-          {/* <img src=coverImgURL} alt="#" /> */}
-
-          <a className="apply-btn" target="_blank">
-            Apply
-          </a>
-
           <section className="job-info">
-            <div className="job-info__left">
-              <div className="job-info__badge">badgeLetters</div>
-              <div className="job-info__below-badge">
-                <time className="job-info__time">daysAgo d</time>
-
-                <BookmarkIcon id="id" />
-              </div>
-            </div>
-
             <div className="job-info__right">
               <h2 className="second-heading">title</h2>
               <p className="job-info__company">company</p>
               <p className="job-info__description">description</p>
               <div className="job-info__extras">
-                <p className="job-info__extra">
-                  <i className="fa-solid fa-clock job-info__extra-icon"></i>
-                  duration
-                </p>
-                <p className="job-info__extra">
-                  <i className="fa-solid fa-money-bill job-info__extra-icon"></i>
-                  salary
-                </p>
-                <p className="job-info__extra">
-                  <i className="fa-solid fa-location-dot job-info__extra-icon"></i>{" "}
-                  location
-                </p>
+                <p className="job-info__extra">duration</p>
+                <p className="job-info__extra">salary</p>
+                <p className="job-info__extra">location</p>
               </div>
             </div>
           </section>
@@ -55,9 +30,6 @@ const ResultsType = ({ children }: MapContainerProps) => {
                   Other qualifications may apply
                 </p>
               </div>
-              <ul className="qualifications__list">
-                <li> List item</li>
-              </ul>
             </section>
 
             <section className="reviews">
